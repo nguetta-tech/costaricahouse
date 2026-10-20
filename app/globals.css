@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-cream font-sans text-ink antialiased; }
+  h1, h2, h3 { @apply font-serif font-medium tracking-tight text-forest-deep; }
+  :focus-visible { outline: 2px solid #B08D4F; outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: #E8DCC4; color: #122A1E; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.22em] text-gold-dark; }
+  .btn { @apply inline-flex min-h-[44px] cursor-pointer items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition duration-200 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-forest text-cream hover:bg-forest-soft; }
+  .btn-gold { @apply btn bg-gold text-forest-deep hover:bg-[#c29f5f]; }
+  .btn-outline { @apply btn border border-forest/30 text-forest hover:border-forest hover:bg-forest hover:text-cream; }
+  .btn-light { @apply btn border border-white/50 text-white hover:bg-white hover:text-forest-deep; }
+  .field { @apply min-h-[44px] w-full rounded-lg border border-sand-dark/70 bg-white px-3.5 text-sm text-ink transition placeholder:text-ink-soft/60 hover:border-forest/50 focus:border-forest; }
+  .label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-ink-soft; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
